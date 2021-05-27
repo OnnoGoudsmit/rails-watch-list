@@ -1,0 +1,19 @@
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://media1.fdncms.com/pittsburgh/imager/u/original/17488698/movie_theater_reopening.jpg);">
+  <div class="container">
+    <h1>My Movie lists</h1>
+  </div>
+</div>
+<div class="container">
+  <%= link_to "Create a new list", new_list_path %>
+
+  <div class="cards">
+    <% @lists.each do |list| %>
+      <%= link_to list_path(list) do %>
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://picsum.photos/200/300)">
+        <h3><%= list.name %></h3>
+      </div>
+      <% end %>
+    <% end %>
+  </div>
+</div>
+
